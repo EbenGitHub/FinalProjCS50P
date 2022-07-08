@@ -285,6 +285,8 @@ def User_Function(user_name):
                     userAfileD[new_name] = new_numb
                     print("Contact Created! ")
                     # userAfileL.append(new_name)
+                else:
+                    print("Operation haulted!!! ")
 
         # Update an existing contact
         def update_e_contact(userAfileD):
