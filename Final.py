@@ -25,9 +25,7 @@ To do before submitting :::
 """
 
 
-
-
-#import modules and packages
+# import modules and packages
 from cryptography.fernet import Fernet
 import base64
 import cowsay
@@ -38,7 +36,7 @@ import os
 import re
 from fpdf import FPDF
 
-#Declare an Empty List
+# Declare an Empty List
 User_Names = []
 User_NamesL = []
 
@@ -58,17 +56,18 @@ for file in os.listdir():
         # Collect files
         files.append(file)
 
-#Check if the masterkey is already exist. If so import the key. If not create one.
+# Check if the masterkey is already exist. If so import the key. If not create one.
 if "thekey.key" not in files:
     key = Fernet.generate_key()
-    with open("thekey.key", 'wb+') as thekey:
+    with open("thekey.key", "wb+") as thekey:
         thekey.write(key)
 else:
-    with open("thekey.key", 'rb') as thekey:
+    with open("thekey.key", "rb") as thekey:
         key = thekey.read()
 
 
 # Main function is started
+
 
 def main():
     # Update the system
@@ -79,10 +78,9 @@ def main():
             for data in reader:
                 User_Names.append(data)
         encrypt_file("User_Data.txt")
-        #print(User_Names)
+        # print(User_Names)
     except FileNotFoundError:
         pass
-
 
     # list already registered User names
     for Users in User_Names:
@@ -100,16 +98,24 @@ def main():
     while True:
         cmd = input("Command? (g-GoToMyDashboard e-Exit) > ")
         if cmd == "g":
-                User_Function(user_name)
+            User_Function(user_name)
         elif cmd == "e":
-                Exit_program()
+            Exit_program()
+
 
 # Function to validate the user name
 def validate(user_name):
 
     # Register new User Name if the user is new
     if user_name not in User_NamesL:
-        if input("User Name not found!!!\nCreate New user? (Y/N) ").lower() in ["1", "y", "yes;6", "ok", "okay", "okey"]:
+        if input("\nUser Name not found!!!\nCreate New user? (Y/N) ").lower() in [
+            "1",
+            "y",
+            "yes;6",
+            "ok",
+            "okay",
+            "okey",
+        ]:
             user_pw = input("Input password: ")
             while True:
                 if user_pw == input("Confirm password: "):
@@ -135,11 +141,12 @@ def validate(user_name):
                         print(f"Incorrect password!!! {i} trial left")
                 exit("too many trial")
 
+
 def encrypt_file(FileName):
     try:
         with open(FileName, "rb") as file:
             data = file.read()
-            
+
         fernet = Fernet(key)
         encrypted = fernet.encrypt(data)
 
@@ -147,24 +154,25 @@ def encrypt_file(FileName):
             file.write(encrypted)
 
     except FileNotFoundError:
-        #print(f"{FileName} not found")
+        # print(f"{FileName} not found")
         pass
+
 
 def decrypt_file(FileName):
     try:
         with open(FileName, "rb") as file:
             data = file.read()
-        
+
         fernet = Fernet(key)
         decrypted = fernet.decrypt(data)
- 
+
         with open(FileName, "wb") as file:
             file.write(decrypted)
 
     except FileNotFoundError:
-        #print(f"{FileName} not found")
+        # print(f"{FileName} not found")
         pass
-    #return decrypted
+    # return decrypted
 
 
 # Function to save changes and exit out of the program
@@ -172,7 +180,7 @@ def Exit_program():
 
     # Save the User Name and Password for next use
     decrypt_file("User_Data.txt")
-    with open("User_Data.txt", "w", newline='') as file:
+    with open("User_Data.txt", "w", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=["User_Name", "PassWord"])
         writer.writeheader()
         for i in range(len(User_Names)):
@@ -182,17 +190,6 @@ def Exit_program():
     # Exit the program
     cowsay.tux("Chao")
     sys.exit(0)
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Function for the verified user
@@ -205,14 +202,14 @@ def User_Function(user_name):
     # Open user contact information file
     try:
         decrypt_file(user_name)
-        with open(user_name, 'r') as file:
+        with open(user_name, "r") as file:
             reader = csv.DictReader(file)
             for data in reader:
                 userAfile.append(data)
                 userAfileD[data["Name"]] = data["Number"]
         encrypt_file(user_name)
-        #userAfileL = [users_["Name"] for users_ in userAfile]
-        #userAfileD = {users_["Name"]: users_["Number"] for users_ in userAfile}
+        # userAfileL = [users_["Name"] for users_ in userAfile]
+        # userAfileD = {users_["Name"]: users_["Number"] for users_ in userAfile}
     except FileNotFoundError:
         pass
 
@@ -222,12 +219,12 @@ def User_Function(user_name):
         # Define user
         def __init__(self, user_name):
             self.name = user_name
-            '''
+            """
             self.expimp
                 self.expimp.export_contact
                 self.expimp.import_contact
             Encrypting file is pending
-            '''
+            """
 
         # str name returns the name of the user
         def __str__(self):
@@ -256,11 +253,16 @@ def User_Function(user_name):
                 print(f"Contact already exist!! {input_}: {userAfileD[input_]}")
 
                 # Update an existing contact if the user requested
-                if input("Do you want to change it? (Y/N) > ").upper() == 'Y':
+                if input("Do you want to change it? (Y/N) > ").upper() == "Y":
                     new_name = input_
-                    #new_numb = input("Number: ")
+                    # new_numb = input("Number: ")
                     new_numb = user.get_numb()
-                    if input(f"Are you sure you want to change {new_name} number to {new_numb}? (Y/N) ").upper() == 'Y':
+                    if (
+                        input(
+                            f"Are you sure you want to change {new_name} number to {new_numb}? (Y/N) "
+                        ).upper()
+                        == "Y"
+                    ):
                         userAfileD[new_name] = new_numb
                         print("Contact Updated! ")
                     else:
@@ -273,13 +275,16 @@ def User_Function(user_name):
             # Create new contact if the contact if new
             else:
                 new_name = input_
-                #new_numb = input(f"{new_name}\n Input Number: ")
+                # new_numb = input(f"{new_name}\n Input Number: ")
                 new_numb = user.get_numb()
-                if input(f"Are you sure to save {new_name}: {new_numb} (Y/N) ").upper() == 'Y':
-                    #userAfile.append({"Name": new_name, "Number": new_numb})
+                if (
+                    input(f"Are you sure to save {new_name}: {new_numb} (Y/N) ").upper()
+                    == "Y"
+                ):
+                    # userAfile.append({"Name": new_name, "Number": new_numb})
                     userAfileD[new_name] = new_numb
                     print("Contact Created! ")
-                    #userAfileL.append(new_name)
+                    # userAfileL.append(new_name)
 
         # Update an existing contact
         def update_e_contact(userAfileD):
@@ -289,8 +294,13 @@ def User_Function(user_name):
             if new_name not in userAfileD:
 
                 # Create the contact if it is new
-                if input(f"{new_name} not found in your contacts!!!\n Would you like to create new one? (Y/N) ").upper() == 'Y':
-                    #new_numb = input(f"{new_name}\n Number: ")
+                if (
+                    input(
+                        f"{new_name} not found in your contacts!!!\n Would you like to create new one? (Y/N) "
+                    ).upper()
+                    == "Y"
+                ):
+                    # new_numb = input(f"{new_name}\n Number: ")
                     new_numb = user.get_numb()
                     userAfileD[new_name] = new_numb
                     print("Contact Created! ")
@@ -301,14 +311,14 @@ def User_Function(user_name):
 
             # Update the existing contact
             else:
-                #new_numb = input(f"{new_name}\n Number: ")
+                # new_numb = input(f"{new_name}\n Number: ")
                 new_numb = user.get_numb()
                 userAfileD[new_name] = new_numb
                 print("Contact Updated! ")
 
         # List all contacts
         def list_all_contacts(userAfile):
-            return(tabulate.tabulate(userAfile, headers="keys", tablefmt="grid"))
+            return tabulate.tabulate(userAfile, headers="keys", tablefmt="grid")
 
         # Find contact by name for the user
         def by_name(userAfileD):
@@ -333,7 +343,7 @@ def User_Function(user_name):
         def one_file(userAfileD):
             input_ = input("Name to DELETE: ")
             if input_ in userAfileD:
-                if input(f"ARE YOU SURE TO DELETE {input_}??? (Y/N) ").upper() == 'Y':
+                if input(f"ARE YOU SURE TO DELETE {input_}??? (Y/N) ").upper() == "Y":
                     userAfileD.pop(input_)
                     print("Contact Deleted! ")
                 else:
@@ -343,7 +353,12 @@ def User_Function(user_name):
 
         # Delete all of the contacts
         def all_file(userAfileD):
-            if input("ALL YOUR CONTACTS WILL BE DELETED\n Type 'DELETE ALL FILE' in cap letter to continue: ") == "DELETE ALL FILE":
+            if (
+                input(
+                    "ALL YOUR CONTACTS WILL BE DELETED\n Type 'DELETE ALL FILE' in cap letter to continue: "
+                )
+                == "DELETE ALL FILE"
+            ):
                 while len(userAfileD) > 0:
                     for users_ in userAfileD:
                         userAfileD.pop(users_)
@@ -355,7 +370,7 @@ def User_Function(user_name):
         # Exit the function by saving changes
         def exit_program(userAfileD):
             decrypt_file(user_name)
-            with open(user_name, "w", newline='') as file:
+            with open(user_name, "w", newline="") as file:
                 writer = csv.DictWriter(file, fieldnames=["Name", "Number"])
                 writer.writeheader()
                 for Users in userAfileD:
@@ -365,28 +380,23 @@ def User_Function(user_name):
         # Export all the contact in a pdf file format for the user
         def export_to_pdf(listAll, ExportName="Untitled.pdf"):
             pdf = FPDF(orientation="P", unit="mm", format="A4")
-            pdf.set_auto_page_break(auto=True, margin = 15)
+            pdf.set_auto_page_break(auto=True, margin=15)
             pdf.add_page()
             pdf.set_font("Helvetica", "B", 20)
-            pdf.cell(0, 10, f'Contact Name ----------------- Contact Number', ln=True)
-            pdf.cell(0, 10, f' ', ln=True)
+            pdf.cell(0, 10, f"Contact Name ----------------- Contact Number", ln=True)
+            pdf.cell(0, 10, f" ", ln=True)
             pdf.set_font("Helvetica", "", 12)
             for users in userAfileD:
-                pdf.cell(0, 10, f'{users} ................... {userAfileD[users]}', ln=True)
-                
+                pdf.cell(
+                    0, 10, f"{users} ................... {userAfileD[users]}", ln=True
+                )
+
             pdf.output(ExportName)
             print("Contact Exported! ")
             print(f"Exported as {ExportName}")
 
-
-
-
-
-
-
-
-#### THE PROGRAM FOR THE VERIFIED USER BEGINS ###
-#....----....----....----....----....----....---#
+    #### THE PROGRAM FOR THE VERIFIED USER BEGINS ###
+    # ....----....----....----....----....----....---#
 
     # Create an object for the user using User Class constructor
     user = User
@@ -405,7 +415,9 @@ def User_Function(user_name):
         print("export your contacts as pdf file ----------- 'x'")
 
         # Import the user data and update the system
-        userAfile = [{"Name": users, "Number": userAfileD[users]} for users in userAfileD]
+        userAfile = [
+            {"Name": users, "Number": userAfileD[users]} for users in userAfileD
+        ]
 
         # Prompt the user for new command
         cmd = input("\n What would you like to do? ")
@@ -415,53 +427,53 @@ def User_Function(user_name):
         #
 
         # list contacts if what the user asked for is so
-        if cmd == 'l':
+        if cmd == "l":
             print(user.list_all_contacts(userAfile))
             print()
 
         # Create or Update contact for the user if required by the user
-        elif cmd == 'u':
+        elif cmd == "u":
             cmd = input("e--UpdateExistingContact\n n--CreateNewContact\n > ")
 
             # Update existing contact
-            if cmd == 'e':
+            if cmd == "e":
                 user.update_e_contact(userAfileD)
 
             # Create new contact
-            elif cmd == 'n':
+            elif cmd == "n":
                 user.create_new_contact(userAfileD)
 
         # Find a contact by name or number if required by the user
-        elif cmd == 'f':
+        elif cmd == "f":
             cmd = input("a--FindByName\n 0--FindByNumber\n > ")
 
             # Find a contact by user's contact name
-            if cmd == 'a':
+            if cmd == "a":
                 user.by_name(userAfileD)
 
             # Find a contact by user's contact number
-            elif cmd == '0':
+            elif cmd == "0":
                 user.by_numb(userAfileD)
 
         # Delete contacts if the user required it
-        elif cmd == 'd':
+        elif cmd == "d":
             cmd = input("a--ToDeleteAllFile\n 1--ToDeleteOneFile\n > ")
 
             # Delete all contacts for the user
-            if cmd == 'a':
+            if cmd == "a":
                 user.all_file(userAfileD)
 
             # Delete one contact for the user
-            elif cmd == '1':
+            elif cmd == "1":
                 user.one_file(userAfileD)
 
         # Exit from the program if user inquired it
-        elif cmd == 'e':
+        elif cmd == "e":
             user.exit_program(userAfileD)
             Exit_program()
 
         # Export user's contact to pdf if the user wants it
-        elif cmd == 'x':
+        elif cmd == "x":
 
             # Ask the user for the name of the pdf file to be exported to be called
             ExportName = input("What would you like to call your exported pdf? ")
