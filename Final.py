@@ -147,7 +147,7 @@ def encrypt_file(FileName):
             file.write(encrypted)
 
     except FileNotFoundError:
-        print(f"{FileName} not found")
+        #print(f"{FileName} not found")
         pass
 
 def decrypt_file(FileName):
@@ -162,7 +162,7 @@ def decrypt_file(FileName):
             file.write(decrypted)
 
     except FileNotFoundError:
-        print(f"{FileName} not found")
+        #print(f"{FileName} not found")
         pass
     #return decrypted
 
