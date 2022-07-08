@@ -262,6 +262,7 @@ def User_Function(user_name):
                     new_numb = user.get_numb()
                     if input(f"Are you sure you want to change {new_name} number to {new_numb}? (Y/N) ").upper() == 'Y':
                         userAfileD[new_name] = new_numb
+                        print("Contact Updated! ")
                     else:
                         print("Operation haulted!!! ")
 
@@ -277,6 +278,7 @@ def User_Function(user_name):
                 if input(f"Are you sure to save {new_name}: {new_numb} (Y/N) ").upper() == 'Y':
                     #userAfile.append({"Name": new_name, "Number": new_numb})
                     userAfileD[new_name] = new_numb
+                    print("Contact Created! ")
                     #userAfileL.append(new_name)
 
         # Update an existing contact
@@ -291,6 +293,7 @@ def User_Function(user_name):
                     #new_numb = input(f"{new_name}\n Number: ")
                     new_numb = user.get_numb()
                     userAfileD[new_name] = new_numb
+                    print("Contact Created! ")
 
                 # Hault the operation if the input is wrong
                 else:
@@ -301,6 +304,7 @@ def User_Function(user_name):
                 #new_numb = input(f"{new_name}\n Number: ")
                 new_numb = user.get_numb()
                 userAfileD[new_name] = new_numb
+                print("Contact Updated! ")
 
         # List all contacts
         def list_all_contacts(userAfile):
@@ -331,6 +335,7 @@ def User_Function(user_name):
             if input_ in userAfileD:
                 if input(f"ARE YOU SURE TO DELETE {input_}??? (Y/N) ").upper() == 'Y':
                     userAfileD.pop(input_)
+                    print("Contact Deleted! ")
                 else:
                     print("Operation haulted!!! ")
             else:
@@ -343,6 +348,7 @@ def User_Function(user_name):
                     for users_ in userAfileD:
                         userAfileD.pop(users_)
                         break
+                print("Contacts Deleted! ")
             else:
                 print("Operation haulted!!! ")
 
@@ -369,6 +375,7 @@ def User_Function(user_name):
                 pdf.cell(0, 10, f'{users} ................... {userAfileD[users]}', ln=True)
                 
             pdf.output(ExportName)
+            print("Contact Exported! ")
             print(f"Exported as {ExportName}")
 
 
