@@ -109,7 +109,7 @@ def validate(user_name):
 
     # Register new User Name if the user is new
     if user_name not in User_NamesL:
-        if input("Create New user? (Y/N) ").lower() in ["1", "y", "yes;6", "ok", "okay", "okey"]:
+        if input("User Name not found!!!\nCreate New user? (Y/N) ").lower() in ["1", "y", "yes;6", "ok", "okay", "okey"]:
             user_pw = input("Input password: ")
             while True:
                 if user_pw == input("Confirm password: "):
