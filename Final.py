@@ -120,7 +120,7 @@ def validate(user_name):
                     return False
         else:
             print("Operation canceled! ")
-            return False
+            sys.exit("Try again latter")
 
     # If the user exists, verify the user with password
     else:
