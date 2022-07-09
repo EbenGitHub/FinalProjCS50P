@@ -36,6 +36,17 @@ Hold on! Wait a minut.
 -- To update an existing contact, input _'e'_. Now you will be prompt for the name of contact and number. Enter accordingly. Oops. I forgot we don't have one. But try to put you contact's name. Not what you expected huh? The program will know that the contact by that name does not exist and will promp you if you want to create one. 
 -- To create new contact,  input _'n'_. Now you will be prompt for the name of contact and number. Enter accordingly. What if you entered the contact that already exist? Will it override it? Try it. Got you again huh? The program will know that the contact by that name already exists and will promp you if you want to change the number of that contact.
 -- This is not only how smart the program is. Okay try to create a new contact and input this _'1234f'_ when promp for Number. Haha. You should see the program rejecting you input saying _"you should only input numbers"_. Okay try this _'+1747474'_. It accepts you even though all you inputs are not numbers. THIS IS JUST A BEGINNENIG
+* Now try to input - _'l'_ to to see the contacts you created. It should present you in a beautiful table.
+* Now try to input - _'f'_ to find numbers or contact's name in your contact. If you want to search contacts by the name of your contact's name, input - _'a'_. If you want to search contacts by the number of your contact's number, input - _'0'_. __NOTE__ that it is not the letter "o", but the number "0" aka zero. It is kind of cool right.
+* Input - _'d'_ to delete your contacts. If you want to delete all of your contacts, input - _'a'_. That command means _'all'_, so becareful! If you want to delete just one of your contact, input - _'1'_. Again __NOTE__ that it is not the letter "l", but the number "1" aka one. If the name you provided does not exist in your contacts, the operation will abort with message "Name not found".
+* Getting used to it? Cool!
+* Input - _'e'_ if you want to save you contacts and exist from the program. If you interrupt the program, all your information you just entered will be lost.
+* This is the final and exiting part of HOW TO USE. If you want to export your contacts as pdf, input - _'x'_.  Then enter the name of the pdf file you want it to be called __without extension__. Eg like _'mypdf'_ but not _'mypdf.pdf'_. The program will add the extension for you.
+* THAT IS IT! GO AND PLAY WITH IT.
 ## Features of the program
+* One benefit of the program is, it will register all your user information and contact informaion using File I/O. So next when you log, you will get all your saved contacts. Isn't that cool.
+* Your user information including your user name and password will be stored in a file called _'User Data.txt'_ & all your contact information will be store in a file name by your user name. Ohh. Do that mean any user can see your user name, password and contacts? try _'cat User\_Data.txt'_.
+save user
+verify numb
 ## Contact developer
 ## Aknowledgment
