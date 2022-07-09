@@ -516,12 +516,20 @@ def User_Function(user_name):
             case "x":
 
                 # Ask the user for the name of the pdf file to be exported to be called
-                ExportName = input("What would you like to call your exported pdf? ")
-                ExportName = f"{ExportName}.pdf"
+                try:
+                    ExportName = input("What would you like to call your exported pdf? ('c'-to cancel export) ")
+                    if ExportName == 'c':
+                        raise ValueError
+                    ExportName = f"{ExportName}.pdf"
 
-                # Pass the user's contact for exporting the contacts
-                user.export_to_pdf(ExportName)
+                    # Pass the user's contact for exporting the contacts
+                    user.export_to_pdf(ExportName)
 
+                except ValueError:
+                    print("Export canceled! ")
+                    pass
+
+                
 
 # Just main is called. Nothing new :)
 if __name__ == "__main__":
