@@ -57,12 +57,12 @@ for file in os.listdir():
         files.append(file)
 
 # Check if the masterkey is already exist. If so import the key. If not create one.
-if "thekey.key" not in files:
+if ".thekey.key" not in files:
     key = Fernet.generate_key()
-    with open("thekey.key", "wb+") as thekey:
+    with open(".thekey.key", "wb+") as thekey:
         thekey.write(key)
 else:
-    with open("thekey.key", "rb") as thekey:
+    with open(".thekey.key", "rb") as thekey:
         key = thekey.read()
 
 
