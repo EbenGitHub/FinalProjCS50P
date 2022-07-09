@@ -458,7 +458,7 @@ def User_Function(user_name):
         userAfile = [
             {"Name": users, "Number": userAfileD[users]} for users in userAfileD
         ]
-        #userAfile = sorted(userAfile)
+        userAfile = sorted(userAfile, key=lambda contacts: contacts["Name"])
 
         # Prompt the user for new command
         match input("\n What would you like to do? "):
