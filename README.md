@@ -9,6 +9,9 @@ Hi!! My Name is Abenezer Eshetie aka Ebenezer Eshexie. I am from Ethiopia, Easte
 The program is multi-user enabled contact saver. With different user accounts, it can store as much contacts as the user wants without user information mixing with eachother.
 
 ## How to use it
+
+>[Video URL](https://www.youtube.com/)
+>
 Hold on! Wait a minute.
 1. Before anything, you need to install the required python packages for the program to run with out any error. The steps are as follows:
 * Go to final project directory using the following command.
@@ -96,13 +99,15 @@ to find numbers or contact's name in your contact.
 > If you want to search contacts by the name of your contact's name, input - 
 > ```bash
 > a
-> ```  
+> ``` 
+> I chose the command to be _a_ because it is the beginning of english letter and can symbolise for the alphabetical words and the user can remember it easily. 
 ####
 > If you want to search contacts by the number of your contact's number, input - 
 > ```bash
 > 0
 > ```
 >  __NOTE__ that it is not the letter "o", but the number "0" aka zero. It is kind of cool right.
+>  I chose the command to be _0_ because it is the beginning of numbers and can symbolise for all integers and the user can remember it easily. 
 * Input - 
 ```bash
 d
@@ -113,12 +118,14 @@ d
 > ```bash
 > a
 > ```
+> I chose the command to be _a_ because it can symbolise for the word _all_ and the user can remember it easily. 
 >  That command means _'all'_, so becareful! 
 ####
 > If you want to delete just one of your contact, input - 
 > ```bash
 > 1
 > ```
+> I chose the command to be _1_ because the user wanted to delete only one contact and the number one is the easiest command and the user can remember it easily. 
 ####
 > Again __NOTE__ that it is not the letter "l", but the number "1" aka one. 
 ####
