@@ -1,38 +1,62 @@
-from cryptography.fernet import Fernet
+'''
+The testing was so challenging for me that i regreted that I chose this program to do for the final praject. 
+It is because, the function i wrote requires multiple input and for some function, it is the side effect that i assert. 
+So this is to inform CS50 that i imported someones library that mocks keyboard input and collect side effects. 
+The module called tud_test_base.py is forked from https://gist.github.com/mauricioaniche/671fb553a81df9e6b29434b7e6e53491
+'''
+
+
 import pytest
 from Final import validate, encrypt_file, decrypt_file, Exit_program
-from Final import User_Function
-#from Final.User_Function.User import get_numb, create_new_contact, update_e_contact, list_all_contacts, by_name, by_numb, one_file, all_file, export_to_pdf
-
+from tud_test_base import get_display_output, set_keyboard_input
 
 
 User_Names = [{"User_Name": "UserTest1", "PassWord": "12345"}]
 User_NamesL = ["UserTest1"]
-userAfileD = {"A": "1", "B": "2"}
-userAfile = ["A", "B"]
 
-
-
-affirmation_L = ["1", "y", "yes", "k", "ok", "okay", "okey"]
 
 Un_data = "This is a test file to encrypt"
-key = Fernet.generate_key()
+
+
 with open("test_file.txt", "w") as file:
     file.write(Un_data)
     
 
 
-#def test_validate():
+#The test begins
+
+def test_validate1():
+    with pytest.raises(SystemExit):
+        set_keyboard_input(["12345", "12345", "12345"])
+
+        validate("UserTest1") == True
+
+    #output = get_display_output("Password: ")
+    
+
+def test_validate2():
+    set_keyboard_input(["1", "0000", "0000"])
+
+    assert validate("UserTest2") == True
+
+    #output = get_display_output("User Name not found!!!", "Create New user? (Y/N) ", "Input password: ", "Confirm password: ")
+
+
+def test_validate3():
+
+    set_keyboard_input(["1", "0000", "0100"])
+
+    assert validate("UserTest2") == False
+
+    #output = get_display_output("User Name not found!!!", "Create New user? (Y/N) ", "Input password: ", "Confirm password: ")
 
 
 def test_encrypt_file():
     encrypt_file("test_file.txt")
     with open("test_file.txt", "r") as file:
             test_data = file.read()
-    f = Fernet(key)
-    En_data = f.encrypt('This is a test file to encrypt')
 
-    assert En_data == test_data
+    assert Un_data != test_data
 
 
 def test_decrypt_file():
@@ -42,8 +66,9 @@ def test_decrypt_file():
 
     assert b'This is a test file to encrypt' == test_data
 
+
 def test_Exit_program():
     with pytest.raises(SystemExit):
         assert Exit_program()
 
-#def test_
+
