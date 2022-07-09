@@ -380,7 +380,7 @@ def User_Function(user_name):
             encrypt_file(user_name)
 
         # Export all the contact in a pdf file format for the user
-        def export_to_pdf(listAll, ExportName="Untitled.pdf"):
+        def export_to_pdf(ExportName="Untitled.pdf"):
             pdf = FPDF(orientation="P", unit="mm", format="A4")
             pdf.set_auto_page_break(auto=True, margin=15)
             pdf.add_page()
@@ -482,8 +482,7 @@ def User_Function(user_name):
             ExportName = f"{ExportName}.pdf"
 
             # Pass the user's contact for exporting the contacts
-            listAll = user.list_all_contacts(userAfile)
-            user.export_to_pdf(listAll, ExportName)
+            user.export_to_pdf(ExportName)
 
 
 # Just main is called. Nothing new :)
