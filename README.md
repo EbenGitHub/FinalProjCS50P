@@ -11,7 +11,7 @@ The program is multi-user enabled contact saver. With different user accounts, i
 ## How to use it
 Hold on! Wait a minut.
 1. Before anything, you need to install the required python packages for the program to run with out any error. The steps are as follows:
-* Go to final project directory using _'cd'_ command.
+* Go to final project directory using >_'cd'_ command.
 * Run the following command _'pip install -r requirements.txt'_
 * If you can go to requirements.txt and install eack packages one by one using the following command _'pip install [package]'_
 2. Nice. Now you can run the program using the following command _'python final.py'_
@@ -46,16 +46,16 @@ Hold on! Wait a minut.
 ## Contact developer
 
 If you have comments, or want to contribute to this program or by any means if you want to contact me, use:
-* GitHub User name: Eenrics[go to the website url](https://github.com/Eenrics/)
+* GitHub User name: [Eenrics](https://github.com/Eenrics/)
 * Email Address: ebenezeresh525@gmail.com
 * Phone Number: +251955455616
 
 
 ## Aknowledgment
-- Thank you CS50 Harvard[go to the website url](https://cs50.harvard.edu/python/2022/)
-- Thank you David J. Malan[go to the website url](https://github.com/dmalan)
+- Thank you [CS50 Harvard](https://cs50.harvard.edu/python/2022/)
+- Thank you [David J. Malan](https://github.com/dmalan)
 - Thank you all CS50 teams
 - Thank you God
 
- © Copyright Reserved! Kiding :) 
+ >© Copyright Reserved! Kiding :) 
  >Use it. I don't care.
