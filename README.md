@@ -45,8 +45,22 @@ Hold on! Wait a minut.
 * THAT IS IT! GO AND PLAY WITH IT.
 ## Features of the program
 * One benefit of the program is, it will register all your user information and contact informaion using File I/O. So next when you log, you will get all your saved contacts. Isn't that cool.
-* Your user information including your user name and password will be stored in a file called _'User Data.txt'_ & all your contact information will be store in a file name by your user name. Ohh. Do that mean any user can see your user name, password and contacts? try _'cat User\_Data.txt'_.
-save user
-verify numb
+* Your user information including your user name and password will be stored in a file called _'User\_Data.txt'_ & all your contact information will be store in a file name by your user name. Ohh. Do that mean any user can see your user name, password and contacts? try _'cat User\_Data.txt'_. Huh. The program will automatically encrpt your file immediatly after usage. This is very tight security. Where is the key store? the key is in a file called _'thekey'_. Try _'ls'_. You don't see it right? Try _'ls -a'_. Now you see it as _'.thekey.key'_. Normal users won't see it. Don't tell this to anyone. This is secrete. ;)
+* The other awsome feature of this program is it will check if you really input a number when trying to save a contact. That is some serious check and data cleaning.
+
 ## Contact developer
+
+If you have comments, or want to contribute to this program or if you want to contact me for any reason, use:
+**GitHub User name: Eenrics
+**Email Address: ebenezeresh525@gmail.com
+**Phone Number: +251955455616
+
+
 ## Aknowledgment
+Thank you CS50 Harvard
+Thank you David J. Malan
+Thank you all CS50 teams
+Thank you God
+
+ © Copyright Reserved! Kiding :) 
+ Use it. I don't care.
