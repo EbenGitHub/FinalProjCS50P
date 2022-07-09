@@ -3,26 +3,26 @@
 
 ## About the creater
 ![This is an image](https://ca.slack-edge.com/T0195LMKD1R-U032HH8BPJS-0ef672957214-48)
-Hi!! My Name is Abenezer Eshetie aka Ebenezer Eshexie. I am from Ethiopia, Eastern Africa. I am self-taught software developer and web designer. I am one of CS50 virtual student. I enjoy coding for fun but i have got to admit that this is my first time to code over 500 lines of codes. Yea. But the point is to apply most of thing i learn't here. It was fun. You have fun too by playing with the program. See you soon! :)
+Hi!! My Name is Abenezer Eshetie aka Ebenezer Eshexie. I am from Ethiopia, Eastern Africa. I am self-taught software developer and web designer. I am one of CS50 virtual student. I enjoy coding for fun but i have got to admit that this is my first time to code over 500 lines of codes. I learnt alot through it. Yea. But the point is to apply most of thing i learnt here. It was fun. You have fun too by playing with the program. See you soon! :)
 
 ## What the program is
-The program is multi-user enabled contact saver. With different user accounts, it can store as much contents as the user wants without user information colliding with eachother.
+The program is multi-user enabled contact saver. With different user accounts, it can store as much contacts as the user wants without user information mixing with eachother.
 
 ## How to use it
-Hold on! Wait a minut.
+Hold on! Wait a minute.
 1. Before anything, you need to install the required python packages for the program to run with out any error. The steps are as follows:
 * Go to final project directory using _'cd'_ command.
 * Run the following command _'pip install -r requirements.txt'_
 * If you can go to requirements.txt and install eack packages one by one using the following command _'pip install [package]'_
 2. Nice. Now you can run the program using the following command _'python final.py'_
-3. You will be prompt for __User Name__. Just Input you User Name. Don't worry. The program will know that you are a new user and will prompt you if you want to create one.
+3. You will be prompt for __User Name__. Just Input your User Name. Don't worry. The program will know that you are new user and will prompt you if you want to create one.
 * If you want to create new user, input _'y'_ or any of the following commands:
 > _'1'_  _'y'_  _'yes'_  _'k'_  _'ok'_  _'okay'_  _'okey'_  in Caps Lock on or off or even mixed.
 * Any key that is not in the above list will abort the operation.
 * Input you new user password
 * Confirm the exact password you typed. Other wise you will be re-prompt if you want to create new user.
 4. If you already have user name, then when you input your user name, you will be asked for password. The program shuts down with 3 incorrect trial for the password.
-5. Wow. you are in. Now you should see beautuful qoute to make your day. You should also see a promp waiting for your command. Go ahead and 
+5. Wow. you are in. Now you should see beautuful qoute to make your day. You should also see a prompt waiting for your command. Go ahead and 
 * Input - _'g'_ to go to your user dashboard.
 * Input - _'e'_ to exit out of the program. Any key input other than this will make to re-prompt your for correct input.
 6. If you went to dashboard, BOOOOM. You should see a penguin greeting you by your user name and list of the commands you can use.
@@ -68,6 +68,7 @@ If you have comments, or want to contribute to this program or by any means if y
 - Thank you [David J. Malan](https://github.com/dmalan)
 - Thank you all CS50 teams
 - Thank you God
+
 
  >© Copyright Reserved! Kiding :) 
  >Use it. I don't care.
