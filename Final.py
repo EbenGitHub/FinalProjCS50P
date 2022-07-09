@@ -445,6 +445,7 @@ def User_Function(user_name):
 
     # List options for the user
     while True:
+        time.sleep(2)
         print()
         print("to update a contact ------------------------ 'u'")
         print("list all your contacts --------------------- 'l'")
