@@ -17,7 +17,7 @@ Hold on! Wait a minut.
 2. Nice. Now you can run the program using the following command _'python final.py'_
 3. You will be prompt for __User Name__. Just Input you User Name. Don't worry. The program will know that you are a new user and will prompt you if you want to create one.
 * If you want to create new user, input _'y'_ or any of the following commands:
-  _'1'_  _'y'_  _'yes'_  _'k'_  _'ok'_  _'okay'_  _'okey'_  in Caps Lock on or off or even mixed.
+> _'1'_  _'y'_  _'yes'_  _'k'_  _'ok'_  _'okay'_  _'okey'_  in Caps Lock on or off or even mixed.
 * Any key that is not in the above list will abort the operation.
 * Input you new user password
 * Confirm the exact password you typed. Other wise you will be re-prompt if you want to create new user.
@@ -31,10 +31,21 @@ Hold on! Wait a minut.
 > To update an existing contact, input _'e'_. Now you will be prompt for the name of contact and number. Enter accordingly. Oops. I forgot we don't have one. But try to put your contact name. Not what you expected huh? The program will know that the contact by that name does not exist and will prompt you if you want to create one. 
 ####
 > To create new contact,  input _'n'_. Now you will be prompt for the name of contact and number. Enter accordingly. What if you entered the contact that already exist? Will it override it? Try it. Got you again huh? The program will know that the contact by that name already exists and will prompt you if you want to change the number of that contact.
--- This is not only how smart the program gets. Okay try to create a new contact and input this _'1234f'_ when prompt for Number. Haha. You should see the program rejecting your input saying _"you should only input numbers"_. Okay try this _'+1747474'_. It accepts you even though all your inputs are not numbers. THIS IS JUST A BEGINNENIG OF THE FUN
+####
+> This is not only how smart the program gets. Okay try to create a new contact and input this _'1234f'_ when prompt for Number. Haha. You should see the program rejecting your input saying _"you should only input numbers"_. Okay try this _'+1747474'_. It accepts you even though all your inputs are not numbers. THIS IS JUST A BEGINNENIG OF THE FUN
 * Now try to input - _'l'_ to to see the contacts you created. It should present you in a beautiful table.
-* Now try to input - _'f'_ to find numbers or contact's name in your contact. If you want to search contacts by the name of your contact's name, input - _'a'_. If you want to search contacts by the number of your contact's number, input - _'0'_. __NOTE__ that it is not the letter "o", but the number "0" aka zero. It is kind of cool right.
-* Input - _'d'_ to delete your contacts. If you want to delete all of your contacts, input - _'a'_. That command means _'all'_, so becareful! If you want to delete just one of your contact, input - _'1'_. Again __NOTE__ that it is not the letter "l", but the number "1" aka one. If the name you provided does not exist in your contacts, the operation will abort with message "Name not found".
+* Now try to input - _'f'_ to find numbers or contact's name in your contact. 
+####
+> If you want to search contacts by the name of your contact's name, input - _'a'_. 
+####
+> If you want to search contacts by the number of your contact's number, input - _'0'_. __NOTE__ that it is not the letter "o", but the number "0" aka zero. It is kind of cool right.
+* Input - _'d'_ to delete your contacts. 
+####
+> If you want to delete all of your contacts, input - _'a'_. That command means _'all'_, so becareful! 
+####
+> If you want to delete just one of your contact, input - _'1'_. Again __NOTE__ that it is not the letter "l", but the number "1" aka one. 
+####
+> If the name you provided does not exist in your contacts, the operation will abort with message "Name not found".
 * Getting used to it? Cool!
 * Input - _'e'_ if you want to save you contacts and exist from the program. If you interrupt the program, all your information you just entered will be lost.
 * This is the final and exciting part of HOW TO USE. If you want to export your contacts as pdf, input - _'x'_.  Then enter the name of the pdf file you want it to be called __without extension__. Eg like _'mypdf'_ but not _'mypdf.pdf'_. The program will add the extension for you.
@@ -47,9 +58,9 @@ Hold on! Wait a minut.
 ## Contact developer
 
 If you have comments, or want to contribute to this program or by any means if you want to contact me, use:
-* GitHub User name: [Eenrics](https://github.com/Eenrics/)
-* Email Address: ebenezeresh525@gmail.com
-* Phone Number: +251955455616
+- [x] GitHub User name: [Eenrics](https://github.com/Eenrics/)
+- [x] Email Address: ebenezeresh525@gmail.com
+- [x] Phone Number: +251955455616
 
 
 ## Aknowledgment
