@@ -46,16 +46,16 @@ Hold on! Wait a minut.
 ## Contact developer
 
 If you have comments, or want to contribute to this program or by any means if you want to contact me, use:
-* GitHub User name: Eenrics
+* GitHub User name: Eenrics[go to the website url](https://github.com/Eenrics/)
 * Email Address: ebenezeresh525@gmail.com
 * Phone Number: +251955455616
 
 
 ## Aknowledgment
-- Thank you CS50 Harvard
-- Thank you David J. Malan
+- Thank you CS50 Harvard[go to the website url](https://cs50.harvard.edu/python/2022/)
+- Thank you David J. Malan[go to the website url](https://github.com/dmalan)
 - Thank you all CS50 teams
 - Thank you God
 
  © Copyright Reserved! Kiding :) 
- Use it. I don't care.
+ >Use it. I don't care.
