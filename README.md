@@ -139,12 +139,12 @@ Then enter the name of the pdf file you want it to be called __without extension
 * THAT IS IT! GO AND PLAY WITH IT.
 ## Features of the program
 * One benefit of the program is, it will register all your user information and contact informaion using File I/O. So next when you log, you will get all your saved contacts. Isn't that cool.
-* Your user information including your user name and password will be stored in a file called _'User\_Data.txt'_ & all your contact information will be store in a file name by your user name. Ohh. Do that mean any user can see your user name, password and contacts? try -
+* Your user information including your user name and password will be stored in a file called `User\_Data.txt` & all your contact information will be store in a file name by your user name. Ohh. Do that mean any user can see your user name, password and contacts? try -
 
 ```bash
 cat User_Data.txt
 ```
-Huh. The program will automatically encrpt your file immediatly after usage. This is very tight security. Where is the key store? the key is in a file called _'thekey'_. Try -
+Huh. The program will automatically encrpt your file immediatly after usage. This is very tight security. Where is the key store? the key is in a file called `thekey`. Try -
 ```bash
 ls
 ```
@@ -152,7 +152,7 @@ You don't see it right? Try -
 ```bash
 ls -a
 ```
-Now you see it as _'.thekey.key'_. Normal users won't see it. Don't tell this to anyone. This is a secrete between me and you. ;)
+Now you see it as `.thekey.key`. Normal users won't see it. Don't tell this to anyone. This is a secrete between me and you. ;)
 * The other awsome feature of this program is it will check if you input for a number is a real phone number when trying to save a contact. You can write phone numbers with only numbers or preceeded with plus sign and country code. You can't input other than this options. That is some serious check and data cleaning.
 
 ## Contact developer
