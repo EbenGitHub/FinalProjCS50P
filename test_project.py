@@ -7,7 +7,7 @@ The module called tud_test_base.py is forked from https://gist.github.com/mauric
 
 
 import pytest
-from Final import validate, encrypt_file, decrypt_file, Exit_program
+from project import validate, encrypt_file, decrypt_file, Exit_program, User_Function
 from tud_test_base import get_display_output, set_keyboard_input
 
 
@@ -72,3 +72,6 @@ def test_Exit_program():
         assert Exit_program()
 
 
+def test_User_Function():
+    ...
+    pass
