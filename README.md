@@ -11,7 +11,7 @@ The program is multi-user enabled contact saver. With different user accounts, i
 ## How to use it
 Hold on! Wait a minut.
 1. Before anything, you need to install the required python packages for the program to run with out any error. The steps are as follows:
-* Go to final project directory using >_'cd'_ command.
+* Go to final project directory using _'cd'_ command.
 * Run the following command _'pip install -r requirements.txt'_
 * If you can go to requirements.txt and install eack packages one by one using the following command _'pip install [package]'_
 2. Nice. Now you can run the program using the following command _'python final.py'_
@@ -28,7 +28,7 @@ Hold on! Wait a minut.
 6. If you went to dashboard, BOOOOM. You should see a penguin greeting you by your user name and list of the commands you can use.
 * Input - _'u'_ to update an existing contact or create a new one. This is the first function you should do to enjoy other commands.
  Now you are prompt for more clear command. 
--- To update an existing contact, input _'e'_. Now you will be prompt for the name of contact and number. Enter accordingly. Oops. I forgot we don't have one. But try to put your contact name. Not what you expected huh? The program will know that the contact by that name does not exist and will prompt you if you want to create one. 
+> To update an existing contact, input _'e'_. Now you will be prompt for the name of contact and number. Enter accordingly. Oops. I forgot we don't have one. But try to put your contact name. Not what you expected huh? The program will know that the contact by that name does not exist and will prompt you if you want to create one. 
 -- To create new contact,  input _'n'_. Now you will be prompt for the name of contact and number. Enter accordingly. What if you entered the contact that already exist? Will it override it? Try it. Got you again huh? The program will know that the contact by that name already exists and will prompt you if you want to change the number of that contact.
 -- This is not only how smart the program gets. Okay try to create a new contact and input this _'1234f'_ when prompt for Number. Haha. You should see the program rejecting your input saying _"you should only input numbers"_. Okay try this _'+1747474'_. It accepts you even though all your inputs are not numbers. THIS IS JUST A BEGINNENIG OF THE FUN
 * Now try to input - _'l'_ to to see the contacts you created. It should present you in a beautiful table.
