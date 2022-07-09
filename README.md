@@ -16,7 +16,7 @@ Hold on! Wait a minut.
 * If you can go to requirements.txt and install eack packages one by one using the following command _'pip install [package]'_
 2. Nice. Now you can run the program using the following command _'python final.py'_
 3. You will be prompt for __User Name__. Just Input you User Name. Don't worry. The program will know that you are a new user and will prompt you if you want to create one.
-I. If you want to create new user, input _'y'_ or any of the following commands:
+1. If you want to create new user, input _'y'_ or any of the following commands:
 - _'1'_
 - _'y'_
 - _'yes'_
