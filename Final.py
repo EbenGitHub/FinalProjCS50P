@@ -458,6 +458,7 @@ def User_Function(user_name):
         userAfile = [
             {"Name": users, "Number": userAfileD[users]} for users in userAfileD
         ]
+        #userAfile = sorted(userAfile)
 
         # Prompt the user for new command
         match input("\n What would you like to do? "):
