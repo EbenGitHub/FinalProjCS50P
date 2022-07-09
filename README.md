@@ -173,7 +173,7 @@ If you have comments, or want to contribute to this program or by any means if y
 - [x] Phone Number: +251955455616
 
 
-## Aknowledgment
+## Acknowledgement
 - Thank you [CS50 Harvard](https://cs50.harvard.edu/python/2022/)
 - Thank you [David J. Malan](https://github.com/dmalan)
 - Thank you all CS50 teams
