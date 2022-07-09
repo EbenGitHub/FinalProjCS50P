@@ -19,6 +19,9 @@ To do before submitting :::
 -- add line comment which tells the steps
 -- add multi-line comment that tells what the program does
 -- Never forget to 'black [file]' your file
+-- 
+-- Clean up unessasery comments
+-- Create edx acc
 -- ...
 
 
@@ -33,12 +36,35 @@ import csv
 import tabulate
 import sys
 import os
+import time
+import random
 import re
 from fpdf import FPDF
 
 # Declare an Empty List
 User_Names = []
 User_NamesL = []
+
+# List affirmation variables
+affirmation_L = ["1", "y", "yes", "k", "ok", "okay", "okey"]
+
+# List Quote opening
+quote_L = [
+    "Go For it",
+    "Never Stop!",
+    "The sky is your limit",
+    "Awsome!",
+    "What a day!",
+    "CS50 Rocks",
+    "Bright",
+    "Vibrant",
+    "I smell success",
+    "Do Hard Things",
+    "Be Strong",
+    "Nothing is impossible",
+    "Dream BIG",
+    "Upward & Forward",
+]
 
 #
 # Create or import master key to decrypt and encrpt files
@@ -94,6 +120,18 @@ def main():
     while valid == False:
         valid = validate(user_name)
 
+    # Make user's day with one of qoutes chosen randomly
+    print()
+    print("****Your Quote*****")
+    print("-" * 35)
+    time.sleep(0.5)
+    print("          ", end="")
+    print(random.choice(quote_L))
+    time.sleep(0.5)
+    print("_" * 35)
+    print()
+    print()
+
     # Take command
     while True:
         cmd = input("Command? (g-GoToMyDashboard e-Exit) > ")
@@ -108,14 +146,10 @@ def validate(user_name):
 
     # Register new User Name if the user is new
     if user_name not in User_NamesL:
-        if input("\nUser Name not found!!!\nCreate New user? (Y/N) ").lower() in [
-            "1",
-            "y",
-            "yes;6",
-            "ok",
-            "okay",
-            "okey",
-        ]:
+        if (
+            input("\nUser Name not found!!!\nCreate New user? (Y/N) ").lower()
+            in affirmation_L
+        ):
             user_pw = input("Input password: ")
             while True:
                 if user_pw == input("Confirm password: "):
@@ -253,7 +287,7 @@ def User_Function(user_name):
                 print(f"Contact already exist!! {input_}: {userAfileD[input_]}")
 
                 # Update an existing contact if the user requested
-                if input("Do you want to change it? (Y/N) > ").upper() == "Y":
+                if input("Do you want to change it? (Y/N) > ").lower() in affirmation_L:
                     new_name = input_
                     # new_numb = input("Number: ")
                     new_numb = user.get_numb()
@@ -278,8 +312,8 @@ def User_Function(user_name):
                 # new_numb = input(f"{new_name}\n Input Number: ")
                 new_numb = user.get_numb()
                 if (
-                    input(f"Are you sure to save {new_name}: {new_numb} (Y/N) ").upper()
-                    == "Y"
+                    input(f"Are you sure to save {new_name}: {new_numb} (Y/N) ").lower()
+                    in affirmation_L
                 ):
                     # userAfile.append({"Name": new_name, "Number": new_numb})
                     userAfileD[new_name] = new_numb
@@ -299,8 +333,8 @@ def User_Function(user_name):
                 if (
                     input(
                         f"{new_name} not found in your contacts!!!\n Would you like to create new one? (Y/N) "
-                    ).upper()
-                    == "Y"
+                    ).lower()
+                    in affirmation_L
                 ):
                     # new_numb = input(f"{new_name}\n Number: ")
                     new_numb = user.get_numb()
@@ -345,7 +379,10 @@ def User_Function(user_name):
         def one_file(userAfileD):
             input_ = input("Name to DELETE: ")
             if input_ in userAfileD:
-                if input(f"ARE YOU SURE TO DELETE {input_}??? (Y/N) ").upper() == "Y":
+                if (
+                    input(f"ARE YOU SURE TO DELETE {input_}??? (Y/N) ").lower()
+                    in affirmation_L
+                ):
                     userAfileD.pop(input_)
                     print("Contact Deleted! ")
                 else:
@@ -422,67 +459,67 @@ def User_Function(user_name):
         ]
 
         # Prompt the user for new command
-        cmd = input("\n What would you like to do? ")
+        match input("\n What would you like to do? "):
 
-        #
-        # Handle the commands as per command of the user
-        #
+            #
+            # Handle the commands as per command of the user
+            #
 
-        # list contacts if what the user asked for is so
-        if cmd == "l":
-            print(user.list_all_contacts(userAfile))
-            print()
+            # list contacts if what the user asked for is so
+            case "l":
+                print(user.list_all_contacts(userAfile))
+                print()
 
-        # Create or Update contact for the user if required by the user
-        elif cmd == "u":
-            cmd = input("e--UpdateExistingContact\n n--CreateNewContact\n > ")
+            # Create or Update contact for the user if required by the user
+            case "u":
+                match input("e--UpdateExistingContact\n n--CreateNewContact\n > "):
 
-            # Update existing contact
-            if cmd == "e":
-                user.update_e_contact(userAfileD)
+                    # Update existing contact
+                    case "e":
+                        user.update_e_contact(userAfileD)
 
-            # Create new contact
-            elif cmd == "n":
-                user.create_new_contact(userAfileD)
+                    # Create new contact
+                    case "n":
+                        user.create_new_contact(userAfileD)
 
-        # Find a contact by name or number if required by the user
-        elif cmd == "f":
-            cmd = input("a--FindByName\n 0--FindByNumber\n > ")
+            # Find a contact by name or number if required by the user
+            case "f":
+                match input("a--FindByName\n 0--FindByNumber\n > "):
 
-            # Find a contact by user's contact name
-            if cmd == "a":
-                user.by_name(userAfileD)
+                    # Find a contact by user's contact name
+                    case "a":
+                        user.by_name(userAfileD)
 
-            # Find a contact by user's contact number
-            elif cmd == "0":
-                user.by_numb(userAfileD)
+                    # Find a contact by user's contact number
+                    case "0":
+                        user.by_numb(userAfileD)
 
-        # Delete contacts if the user required it
-        elif cmd == "d":
-            cmd = input("a--ToDeleteAllFile\n 1--ToDeleteOneFile\n > ")
+            # Delete contacts if the user required it
+            case "d":
+                match input("a--ToDeleteAllFile\n 1--ToDeleteOneFile\n > "):
 
-            # Delete all contacts for the user
-            if cmd == "a":
-                user.all_file(userAfileD)
+                    # Delete all contacts for the user
+                    case "a":
+                        user.all_file(userAfileD)
 
-            # Delete one contact for the user
-            elif cmd == "1":
-                user.one_file(userAfileD)
+                    # Delete one contact for the user
+                    case "1":
+                        user.one_file(userAfileD)
 
-        # Exit from the program if user inquired it
-        elif cmd == "e":
-            user.exit_program(userAfileD)
-            Exit_program()
+            # Exit from the program if user inquired it
+            case "e":
+                user.exit_program(userAfileD)
+                Exit_program()
 
-        # Export user's contact to pdf if the user wants it
-        elif cmd == "x":
+            # Export user's contact to pdf if the user wants it
+            case "x":
 
-            # Ask the user for the name of the pdf file to be exported to be called
-            ExportName = input("What would you like to call your exported pdf? ")
-            ExportName = f"{ExportName}.pdf"
+                # Ask the user for the name of the pdf file to be exported to be called
+                ExportName = input("What would you like to call your exported pdf? ")
+                ExportName = f"{ExportName}.pdf"
 
-            # Pass the user's contact for exporting the contacts
-            user.export_to_pdf(ExportName)
+                # Pass the user's contact for exporting the contacts
+                user.export_to_pdf(ExportName)
 
 
 # Just main is called. Nothing new :)
