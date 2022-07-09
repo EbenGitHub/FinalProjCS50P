@@ -97,6 +97,11 @@ else:
 
 def main():
     # Update the system
+    print()
+    print("_" * 9)
+    print("Contayzer")
+    print("." * 9)
+    print()
     try:
         decrypt_file("User_Data.txt")
         with open("User_Data.txt", "r") as file:
