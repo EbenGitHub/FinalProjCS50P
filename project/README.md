@@ -12,7 +12,7 @@ The program is multi-user enabled contact saver. With different user accounts, i
 
 ## How to use it
 
->[Video URL](https://www.youtube.com/)
+>[Video URL](https://youtu.be/z-I7K2VS9U4)
 >
 Hold on! Wait a minute.
 1. Before anything, you need to install the required python packages for the program to run with out any error. The steps are as follows:
@@ -147,7 +147,7 @@ x
 Then enter the name of the pdf file you want it to be called __without extension__. Eg like _'mypdf'_ but not _'mypdf.pdf'_. The program will add the extension for you.
 * THAT IS IT! GO AND PLAY WITH IT.
 
->[YouTube URL](https://www.youtube.com/)
+>[YouTube URL](https://youtu.be/z-I7K2VS9U4)
 
 ## Features of the program
 * One benefit of the program is, it will register all your user information and contact informaion using File I/O. So next when you log, you will get all your saved contacts. Isn't that cool.
