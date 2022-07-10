@@ -139,7 +139,7 @@ d
 e
 ```
 if you want to save you contacts and exist from the program. If you interrupt the program, all your information you just entered will be lost.
-* This ;6is the final and exciting part of HOW TO USE. If you want to export your contacts as pdf, input - 
+* This is the final and exciting part of HOW TO USE. If you want to export your contacts as pdf, input - 
 
 ```bash
 x
