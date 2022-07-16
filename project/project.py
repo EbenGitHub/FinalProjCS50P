@@ -30,6 +30,7 @@ To do before submitting :::
 
 # import modules and packages
 from cryptography.fernet import Fernet
+from getpass import getpass
 import base64
 import cowsay
 import csv
@@ -155,9 +156,9 @@ def validate(user_name):
             input("\nUser Name not found!!!\nCreate New user? (Y/N) ").lower()
             in affirmation_L
         ):
-            user_pw = input("Input password: ")
+            user_pw = getpass()
             while True:
-                if user_pw == input("Confirm password: "):
+                if user_pw == getpass("Confirm password: "):
                     User_Names.append({"User_Name": user_name, "PassWord": user_pw})
                     return True
                 else:
@@ -173,7 +174,7 @@ def validate(user_name):
             if user["User_Name"] == user_name:
                 i = 3
                 while i > 0:
-                    if input("Password: ") == user["PassWord"]:
+                    if getpass("Password: ") == user["PassWord"]:
                         return True
                     else:
                         i -= 1
